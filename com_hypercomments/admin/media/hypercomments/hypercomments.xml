@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<element type="hypercomments" group="Web Service">
+	<name>Hypercomments</name>
+	<author>Arkadiy, Joomline</author>
+	<creationDate>29.01.2015</creationDate>
+	<copyright>Copyright (C) YOOtheme GmbH</copyright>
+	<authorEmail>info@yootheme.com</authorEmail>
+	<authorUrl>http://www.yootheme.com</authorUrl>
+	<version>1.0</version>
+	<description>Hypercomments K2 plugin to extend item form ZOO.</description>
+	<params>
+		<!--<param-->
+				<!--name="exclude_categories"-->
+				<!--type="k2categories"-->
+				<!--default=""-->
+				<!--multiple="multiple"-->
+				<!--label="PLG_HYPERCOMMENTS_EXCLUDE_CATEGORY"-->
+				<!--description="PLG_HYPERCOMMENTS_EXCLUDE_CATEGORY_DESC"-->
+				<!--/>-->
+		<!--<param-->
+				<!--name="allow_in_category"-->
+				<!--type="radio"-->
+				<!--label="Allow in category"-->
+				<!--description="Show counters from category view"-->
+				<!--default="0">-->
+			<!--<option value="1">JYES</option>-->
+			<!--<option value="0">JNO</option>-->
+		<!--</param>-->
+		<param
+				name="counter_selector"
+				type="text"
+				label="Counter selector"
+				description="CSS selector from element, contains link to the commented page"
+				default=".zooHcCounter"/>
+		<param
+				name="counter_label"
+				type="text"
+				label="Counter label"
+				description="Counter label"
+				default="Комментарии({%COUNT%})"
+				filter=""/>
+		<param name="default" type="radio" default="1" label="Enabled By Default" description="Enabled by default">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</param>
+	</params>
+	<params group="render">
+		<param
+				name="default"
+				type="radio"
+				default="1"
+				label="Show comments"
+				description="Show comments"
+				>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</param>
+	</params>
+</element>

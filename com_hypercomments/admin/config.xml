@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<config>
+    <fieldset name="global" label="JGLOBAL_FIELDSET_OPTIONS">
+		<field 
+				name="widget_id"
+				type="text"
+				label="COM_HYPERCOMMENTS_WIDGET_ID"
+				readonly="true"
+				default=""
+				filter=""/>
+		<field
+				name="secret_key"
+				type="text"
+				label="COM_HYPERCOMMENTS_SECRET_KEY"
+				readonly="true"
+				default=""
+				filter=""/>
+        <field
+                name="sync"
+                type="radio"
+                label="COM_HYPERCOMMENTS_COUNTER_SYNC"
+                description="COM_HYPERCOMMENTS_COUNTER_SYNC_DESC"
+                default="1"
+                filter="int">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+        <field
+                name="local_limit"
+                type="text"
+                label="COM_HYPERCOMMENTS_LOCAL_LIMIT"
+                description="COM_HYPERCOMMENTS_LOCAL_LIMIT_DESC"
+                required="true"
+                default="50"
+                filter="int"/>
+    </fieldset>
+
+    <fieldset name="vidget" label="COM_HYPERCOMMENTS_VIDGET">
+        <field
+                name="words_limit"
+                type="text"
+                label="COM_HYPERCOMMENTS_MAX_COUNT_WORDS"
+                description="COM_HYPERCOMMENTS_MAX_COUNT_WORDS_DESC"
+                required="true"
+                default="10"
+                filter="int"/>
+        <field
+                name="max_level"
+                type="text"
+                label="COM_HYPERCOMMENTS_MAX_LEVEL"
+                description="COM_HYPERCOMMENTS_MAX_LEVEL_DESC"
+                required="true"
+                default="4"
+                filter="int"/>
+        <field
+                name="css_path"
+                type="text"
+                label="COM_HYPERCOMMENTS_MAX_CSS_PATH"
+                description="COM_HYPERCOMMENTS_MAX_CSS_PATH_DESC"
+                default=""
+                filter=""/>
+        <field
+                name="realtime_show"
+                type="radio"
+                label="COM_HYPERCOMMENTS_REALTIME_SHOW"
+                description="COM_HYPERCOMMENTS_REALTIME_SHOW_DESC"
+                default="1">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+        <field
+                name="social"
+                type="list"
+                multiple="multiple"
+                size="5"
+                label="COM_HYPERCOMMENTS_SOCIAL"
+                description="COM_HYPERCOMMENTS_SOCIAL_DESC"
+                default="">
+            <option value="google">Google</option>
+            <option value="facebook">Facebook</option>
+            <option value="twitter">Twitter</option>
+            <option value="vk">Vk</option>
+            <option value="odnoklassniki">Odnoklassniki</option>
+            <option value="mailru">Mailru</option>
+            <option value="yandex">Yandex</option>
+            <option value="openid">Openid</option>
+        </field>
+    </fieldset>
+
+
+    <fieldset name="counter" label="COM_HYPERCOMMENTS_COUNTER">
+        <field
+                name="allow_in_category"
+                type="radio"
+                label="COM_HYPERCOMMENTS_ALLOW_IN_CATEGORY"
+                description="COM_HYPERCOMMENTS_ALLOW_IN_CATEGORY_DESC"
+                default="0">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+        <field
+                name="counter_selector"
+                type="text"
+                label="COM_HYPERCOMMENTS_COUNTER_SELECTOR"
+                description="COM_HYPERCOMMENTS_COUNTER_SELECTOR_DESC"
+                required="true"
+                default=".btn"/>
+        <field
+                name="counter_label"
+                type="text"
+                label="COM_HYPERCOMMENTS_COUNTER_LABEL"
+                description="COM_HYPERCOMMENTS_COUNTER_LABEL_DESC"
+                required="true"
+                default="Комментарии({%COUNT%})"
+                filter=""/>
+    </fieldset>
+
+    <fieldset
+            name="permissions"
+            label="JCONFIG_PERMISSIONS_LABEL"
+            description="JCONFIG_PERMISSIONS_DESC"
+            >
+        <field
+                name="rules"
+                type="rules"
+                label="JCONFIG_PERMISSIONS_LABEL"
+                class="inputbox"
+                validate="rules"
+                filter="rules"
+                component="com_hypercomments"
+                section="component"/>
+    </fieldset>
+</config>

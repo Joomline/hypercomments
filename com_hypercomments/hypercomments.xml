@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<extension type="component" version="2.5.0" method="upgrade">
+    <name>com_hypercomments</name>
+    <author>Arkadiy, JoomLine</author>
+    <authorEmail>sale@joomline.ru</authorEmail>
+    <authorUrl>joomline.ru</authorUrl>
+    <copyright>Copyright (c)2015 Arkadiy Sedelnikov, JoomLine</copyright>
+    <license>GNU GPLv3 - http://www.gnu.org/licenses/gpl.html</license>
+    <version>1.0</version>
+    <description>COM_HYPERCOMMENTS_DESC</description>
+    <creationDate>24 January 2015</creationDate>
+    <files folder="site">
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>models</folder>
+        <folder>tables</folder>
+        <folder>xml</folder>
+        <filename>controller.php</filename>
+        <filename>hypercomments.php</filename>
+        <filename>index.html</filename>
+    </files>
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+    <languages folder="site">
+        <language tag="en-GB">language/en-GB/en-GB.com_hypercomments.ini</language>
+        <language tag="ru-RU">language/ru-RU/ru-RU.com_hypercomments.ini</language>
+    </languages>
+    <media folder="media" destination="zoo/elements">
+        <folder>hypercomments</folder>
+    </media>
+    <administration>
+        <menu>COM_HYPERCOMMENTS</menu>
+        <files folder="admin">
+            <folder>assets</folder>
+            <folder>controllers</folder>
+            <folder>helpers</folder>
+            <folder>language</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>views</folder>
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>hypercomments.php</filename>
+            <filename>hypercomments.xml</filename>
+            <filename>index.html</filename>
+        </files>
+        <languages folder="admin">
+            <language tag="en-GB">language/en-GB/en-GB.com_hypercomments.ini</language>
+            <language tag="ru-RU">language/ru-RU/ru-RU.com_hypercomments.ini</language>
+            <language tag="en-GB">language/en-GB/en-GB.com_hypercomments.sys.ini</language>
+            <language tag="ru-RU">language/ru-RU/ru-RU.com_hypercomments.sys.ini</language>
+        </languages>
+    </administration>
+</extension>

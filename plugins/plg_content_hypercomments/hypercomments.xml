@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.2" type="plugin" group="content">
+	<name>plg_content_hypercomments</name>
+	<author>JoomLine</author>
+	<creationDate>26.01.2015</creationDate>
+	<copyright>(C) 2015 All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later;</license>
+	<authorEmail></authorEmail>
+	<authorUrl></authorUrl>
+	<version>1.0.0</version>
+	<description>PLG_HYPERCOMMENTS_XML_DESCRIPTION</description>
+	<files>
+		<folder>elements</folder>
+		<filename plugin="hypercomments">hypercomments.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<languages folder="languages">
+		<language tag="en-GB">en-GB/en-GB.plg_content_hypercomments.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_content_hypercomments.sys.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.plg_content_hypercomments.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.plg_content_hypercomments.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params" addfieldpath="plugins/content/hypercomments/elements">
+			<fieldset name="com_content">
+				<field
+						name="allow_in_category"
+						type="radio"
+						label="COM_HYPERCOMMENTS_ALLOW_IN_CATEGORY"
+						description="COM_HYPERCOMMENTS_ALLOW_IN_CATEGORY_DESC"
+						default="0">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field
+						name="counter_selector"
+						type="text"
+						label="COM_HYPERCOMMENTS_COUNTER_SELECTOR"
+						description="COM_HYPERCOMMENTS_COUNTER_SELECTOR_DESC"
+						required="true"
+						default=".btn"/>
+				<field
+						name="counter_label"
+						type="text"
+						label="COM_HYPERCOMMENTS_COUNTER_LABEL"
+						description="COM_HYPERCOMMENTS_COUNTER_LABEL_DESC"
+						required="true"
+						default="Комментарии({%COUNT%})"
+						filter=""/>
+				<field
+						name="exclude_categories"
+						type="category"
+						extension='com_content'
+						default=""
+						multiple="multiple"
+						label="PLG_HYPERCOMMENTS_EXCLUDE_CATEGORY"
+						description="PLG_HYPERCOMMENTS_EXCLUDE_CATEGORY_DESC"
+						/>
+			</fieldset>
+			<fieldset name="com_vm">
+				<field
+						name="vm_allow_in_category"
+						type="radio"
+						label="COM_HYPERCOMMENTS_ALLOW_IN_CATEGORY"
+						description="COM_HYPERCOMMENTS_ALLOW_IN_CATEGORY_DESC"
+						default="0">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field
+						name="vm_counter_selector"
+						type="text"
+						label="COM_HYPERCOMMENTS_COUNTER_SELECTOR"
+						description="COM_HYPERCOMMENTS_COUNTER_SELECTOR_DESC"
+						required="true"
+						default=".btn"/>
+				<field
+						name="vm_counter_label"
+						type="text"
+						label="COM_HYPERCOMMENTS_COUNTER_LABEL"
+						description="COM_HYPERCOMMENTS_COUNTER_LABEL_DESC"
+						required="true"
+						default="Комментарии({%COUNT%})"
+						filter=""/>
+				<field
+						name="exclude_vm_categories"
+						type="vmcategories"
+						default=""
+						multiple="multiple"
+						label="PLG_JLLIKEPRO_EXCLUDE_CATEGORY_LABEL"
+						description="PLG_JLLIKEPRO_EXCLUDE_CATEGORY_DESC"
+						/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
