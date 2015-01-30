@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.2" type="plugin" group="content">
+<extension version="2.5" type="plugin" group="content">
 	<name>plg_content_hypercomments</name>
-	<author>JoomLine</author>
+	<author>Arkadiy Sedelnikov, JoomLine</author>
 	<creationDate>26.01.2015</creationDate>
-	<copyright>(C) 2015 All rights reserved.</copyright>
+	<copyright>Copyright (c) 2013 Arkadiy, Joomline. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later;</license>
-	<authorEmail></authorEmail>
+	<authorEmail>sale@joomline.ru</authorEmail>
 	<authorUrl></authorUrl>
 	<version>1.0.0</version>
 	<description>PLG_HYPERCOMMENTS_XML_DESCRIPTION</description>

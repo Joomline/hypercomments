@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <extension type="component" version="1.6.0" method="upgrade">
     <name>com_hypercomments</name>
-    <author>Arkadiy, JoomLine</author>
-    <authorEmail>a.sedelnikov@gmail.com</authorEmail>
-    <authorUrl>argens.ru</authorUrl>
+    <author>Arkadiy Sedelnikov, JoomLine</author>
+    <authorEmail>sale@joomline.ru</authorEmail>
+    <authorUrl>joomline.ru</authorUrl>
     <copyright>Copyright (c)2015 Arkadiy Sedelnikov, JoomLine</copyright>
     <license>GNU GPLv3 - http://www.gnu.org/licenses/gpl.html</license>
     <version>1.0</version>

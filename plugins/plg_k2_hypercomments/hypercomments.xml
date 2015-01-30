@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="2.5" type="plugin" group="k2" method="upgrade">
 	<name>Hypercomments K2 Plugin</name>
-	<author>Arkadiy, Joomline</author>
+	<author>Arkadiy Sedelnikov, JoomLine</author>
 	<creationDate>29.01.2015</creationDate>
 	<copyright>Copyright (c) 2013 Arkadiy, Joomline. All rights reserved.</copyright>
-	<authorEmail>a.sedelnikov@gmail.com</authorEmail>
-	<authorUrl>argens.ru</authorUrl>
+	<authorEmail>sale@joomline.ru</authorEmail>
+	<authorUrl>joomline.ru</authorUrl>
 	<version>1.1</version>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<description>An Hypercomments K2 plugin to extend item form in K2.</description>
