@@ -12,7 +12,7 @@
 defined('_JEXEC') or die ;
 
 jimport('joomla.form.formfield');
-require_once JPATH_ROOT . '/administrator/components/com_virtuemart/helpers/config.php';
+
 class JFormFieldVMcategories extends JFormField
 {
 
@@ -24,6 +24,8 @@ class JFormFieldVMcategories extends JFormField
         {
             return '';
         }
+
+        include_once JPATH_ROOT . '/administrator/components/com_virtuemart/helpers/config.php';
 
         VmConfig::loadConfig();
         $lang = VmConfig::$vmlang;
