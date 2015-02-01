@@ -50,7 +50,8 @@ class HypercommentsHelper
 		$words_limit = (int)$params->get('words_limit', 10);
 		$comments_level = (int)$params->get('max_level', 4);
 		$local_limit = (int)$params->get('local_limit', 50);
-		$social = implode(', ', $params->get('social'));
+		$social = $params->get('social');
+		$social = (is_array($social)) ? implode(', ', $social) : '';
 		$realtime = ($params->get('realtime_show', 1)) ? 'true' : 'false';
 		$xid = $component.'_'.$contentId;
 
