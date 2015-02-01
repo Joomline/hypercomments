@@ -25,14 +25,23 @@ function ShowLoadingScreen()
 		.css('top', (jQuery(window).height() - fade_div.outerHeight(true)) / 2 + jQuery(window).scrollTop())
 		.css('left', (jQuery(window).width() - fade_div.outerWidth(true)) / 2 + jQuery(window).scrollLeft());
 
-	var overlay = $("#overlay") || jQuery('<div></div>')
-				.appendTo(document.body)
-				.hide()
-				.attr('id', "overlay")
-				.css('z-index', "1499")
-				.show()
+	var overlay = jQuery("#overlay");
+
+	if (overlay.length == 0)
+	{
+		jQuery('<div></div>')
+			.appendTo(document.body)
+			.hide()
+			.attr('id', "overlay")
+			.css('z-index', "1499")
+			.show()
 		;
-	overlay.show();
+	}
+	else{
+		overlay.show();
+	}
+
+
 }
 
 // Скрытие экрана загрузки AJAX.
@@ -259,7 +268,7 @@ function ob_length(obj)
 
 function printSystemMsg(type, msg){
 	var divClass = (type == 'error') ? 'alert-error' : 'alert-success';
-	$('#system-message-container').html(
+	jQuery('#system-message-container').html(
 		'<button type="button" class="close" data-dismiss="alert">×</button>' +
 		'<div class="alert '+divClass+'">'+
 		'<h4 class="alert-heading">Messsage</h4>' +
