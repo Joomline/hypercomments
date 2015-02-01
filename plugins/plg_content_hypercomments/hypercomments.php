@@ -16,6 +16,7 @@ class PlgContentHypercomments extends JPlugin
 {
 	public function onContentAfterDisplay($context, &$article, $params, $page = 0)
 	{
+		$return = '';
 		switch(JFactory::getApplication()->input->getCmd('option')){
 			case 'com_content':
 				$return = $this->getContentData($context, $article, $params, $page);
