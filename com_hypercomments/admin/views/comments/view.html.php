@@ -75,29 +75,10 @@ class HypercommentsViewComments extends JViewLegacy
 		JToolBarHelper::title( JText::_( 'COM_HYPERCOMMENTS' ) );
 		$canDo = hypercommentsHelper::getActions( 'comment' );
 
-		if ( $canDo->get( 'core.create' ) || ( count( $this->user->getAuthorisedCategories( 'com_hypercomments', 'core.create' ) ) ) > 0 ) {
-			JToolBarHelper::addNew( 'comment.add' );
+		if ( $canDo->get( 'core.admin' ) ) {
+			JToolBarHelper::preferences( 'com_hypercomments' );
+			JToolBarHelper::divider();
 		}
 
-		if ( ( $canDo->get( 'core.edit' ) ) || ( $canDo->get( 'core.edit.own' ) ) ) {
-			JToolBarHelper::editList( 'comment.edit' );
-		}
-
-		if ( $canDo->get( 'core.edit.state' ) ) {
-			JToolBarHelper::divider();
-			JToolBarHelper::publish( 'comments.publish', 'JTOOLBAR_PUBLISH', true );
-			JToolBarHelper::unpublish( 'comments.unpublish', 'JTOOLBAR_UNPUBLISH', true );
-			JToolBarHelper::divider();
-
-			if ( $canDo->get( 'core.delete' ) ) {
-				JToolBarHelper::deleteList( 'DELETE_QUERY_STRING', 'comments.delete', 'JTOOLBAR_DELETE' );
-				JToolBarHelper::divider();
-			}
-
-			if ( $canDo->get( 'core.admin' ) ) {
-				JToolBarHelper::preferences( 'com_hypercomments' );
-				JToolBarHelper::divider();
-			}
-		}		
 	}
 }
