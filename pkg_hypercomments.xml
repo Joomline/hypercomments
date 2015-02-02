@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<extension type="package" version="2.5">
+<extension type="package" version="3.0">
     <name>Hypercomments</name>
     <author>Arkadiy Sedelnikov, JoomLine</author>
 	<packagename>hypercomments</packagename>
@@ -11,8 +11,8 @@
     <version>1.0</version>
     <description>The installation package for integrating social commentary hypercomments site Joomla. The package includes component integration and plugins.</description>
 <files>
-	    <file type="component" method="upgrade"  id="HyperComments" client="site">com_hypercomments.zip</file>
-	    <file type="plugin" method="upgrade"  id="hypercomments" client="site">plg_content_hypercomments.zip</file>
-	    <file type="plugin" method="upgrade"  id="hypercomments" client="site">plg_k2_hypercomments.zip</file> 
+	    <file type="component" method="upgrade"  id="com_hypercomments" client="site">com_hypercomments.zip</file>
+	    <file type="plugin" method="upgrade"  id="hypercomments" group="content" client="site">plg_content_hypercomments.zip</file>
+	    <file type="plugin" method="upgrade"  id="hypercomments" group="k2" client="site">plg_k2_hypercomments.zip</file> 
 </files>
 </extension>

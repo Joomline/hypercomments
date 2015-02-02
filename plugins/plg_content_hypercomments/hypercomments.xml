@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="2.5" type="plugin" group="content" method="upgrade">
+<extension version="3.0" type="plugin" group="content" method="upgrade">
 	<name>plg_content_hypercomments</name>
 	<author>Arkadiy Sedelnikov, JoomLine</author>
 	<creationDate>26.01.2015</creationDate>
-	<copyright>Copyright (c) 2013 Arkadiy, Joomline. All rights reserved.</copyright>
+	<copyright>Copyright (c) 2015 Arkadiy, Joomline. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later;</license>
 	<authorEmail>sale@joomline.ru</authorEmail>
 	<authorUrl></authorUrl>

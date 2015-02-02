@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<extension type="component" version="2.5.0" method="upgrade">
+<extension type="component" version="3.0" method="upgrade">
     <name>com_hypercomments</name>
     <author>Arkadiy, JoomLine</author>
     <authorEmail>sale@joomline.ru</authorEmail>
