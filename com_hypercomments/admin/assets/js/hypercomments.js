@@ -139,7 +139,7 @@ function HideLoadingScreen()
 
 		// save widget id
 		save_wid: function(data){
-			if(typeOf(data.wid) == undefined || parseInt(data.wid) == 0){
+			if(typeof(data.wid) == 'undefined' || parseInt(data.wid) == 0){
 				this.showMessage('error', 'Widget ID undefined');
 				HideLoadingScreen;
 			}

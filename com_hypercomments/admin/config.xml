@@ -5,14 +5,12 @@
 				name="widget_id"
 				type="text"
 				label="COM_HYPERCOMMENTS_WIDGET_ID"
-				readonly="true"
 				default=""
 				filter=""/>
 		<field
 				name="secret_key"
 				type="text"
 				label="COM_HYPERCOMMENTS_SECRET_KEY"
-				readonly="true"
 				default=""
 				filter=""/>
         <field
