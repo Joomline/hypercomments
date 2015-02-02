@@ -87,8 +87,8 @@
 						type="vmcategories"
 						default=""
 						multiple="multiple"
-						label="PLG_JLLIKEPRO_EXCLUDE_CATEGORY_LABEL"
-						description="PLG_JLLIKEPRO_EXCLUDE_CATEGORY_DESC"
+						label="PLG_HYPERCOMMENTS_EXCLUDE_VM_CATEGORY"
+						description="PLG_HYPERCOMMENTS_EXCLUDE_VM_CATEGORY_DESC"
 						/>
 			</fieldset>
 		</fields>
