@@ -81,10 +81,6 @@ function HideLoadingScreen()
 			{
 				$this.login();
 			});
-			$('#wp_to_hc').on('click', function ()
-			{
-				$this.import();
-			});
 		},
 
 		// event login
@@ -94,6 +90,9 @@ function HideLoadingScreen()
 
 		showMessage: function(type, msg){
 			var divClass = (type == 'error') ? 'alert-error' : 'alert-success';
+			if(typeof(hclang[msg]) != 'undefined'){
+				msg = hclang[msg];
+			}
 			$('#system-message-container').html(
 				'<button type="button" class="close" data-dismiss="alert">×</button>' +
 				'<div class="alert '+divClass+'">' +
@@ -165,22 +164,6 @@ function HideLoadingScreen()
 					document.location.reload();
 				}
 			});
-		},
-
-		// send nodify about import
-		send_notify: function(packet){
-			$.getJSON(this.hc_url+'/api/import?response_type=callback&callback=?',packet, function(data){
-				if(data.result == 'success')
-					$('.hc_im_status').addClass('hc_ok');
-				else
-					$('.hc_im_status').addClass('hc_no');
-			});
-		},
-
-		// check int
-		isInt: function(n){
-			var exp = /^\d{1,}$/;
-			return exp.test(n);
 		},
 
 		// show popup

@@ -32,6 +32,8 @@ class HypercommentsViewComments extends JViewLegacy
 		$widget_id = $params->get('widget_id', '');
 		$hcpUrl = ($widget_id != '') ? '//admin.hypercomments.com/comments/approve/'.$widget_id : '//admin.hypercomments.com';
 
+		$auth_error = JText::_('COM_HYPERCOMMENTS_AUTH_ERROR');
+
 		JHtml::_('jquery.framework');
 		$doc->addStyleSheet(JUri::root().'administrator/components/com_hypercomments/assets/css/hypercomments.css');
 		$doc->addScript(JUri::root().'administrator/components/com_hypercomments/assets/js/hypercomments.js');
@@ -59,7 +61,12 @@ class HypercommentsViewComments extends JViewLegacy
 			var hcc = document.createElement('script');
 			hcc.type = 'text/javascript'; hcc.async = true;
 	        hcc.src = document.location.protocol+'//widget.hypercomments.com/apps/js/hc0.js';
-	        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hcc, s.nextSibling);
+	        var s = document.getElementsByTagName('script')[0];
+	        s.parentNode.insertBefore(hcc, s.nextSibling);
+
+	        var hclang = {
+	        	auth_error: '$auth_error'
+	        }
 		");
 		$this->addToolbar();
 		hypercommentsHelper::addSubmenu( 'comments' );
