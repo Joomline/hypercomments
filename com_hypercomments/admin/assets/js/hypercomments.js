@@ -63,7 +63,7 @@ function HideLoadingScreen()
 			this.set_init_param(param);
 			if(param.widget_id == '')
 			{
-				this.login();
+				$('.e_hc_login').click();
 			}
 		},
 
