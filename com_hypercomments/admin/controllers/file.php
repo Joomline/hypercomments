@@ -114,6 +114,14 @@ class hypercommentsControllerFile extends JControllerLegacy
 				$filename = $v['object_group'].'_'.$k;
 				$file = JPATH_ROOT . '/components/com_hypercomments/xml/'.$filename.'.xml';
 
+				if(JFile::exists($file) && JFile::delete($file))
+				{
+					$query->clear()
+						->delete('#__hypercomments_export')
+						->where('`filename` = '.$db->quote($filename.'.xml'));
+					$db->setQuery($query)->execute();
+				}
+
 				if(JFile::write($file, $html))
 				{
 					$query->clear()
