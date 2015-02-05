@@ -50,7 +50,7 @@ class ElementHypercomments extends Element implements iSubmittable {
 				$item_route = JRoute::_($this->app->route->item($this->_item, false), true, -1);
 				$selector = $this->config->get('counter_selector', '.zooHcCounter');
 				$label = $this->config->get('counter_label');
-				$html = '<a class="'.$selector.'" data-xid="com_zoo_'.$this->_item->id.'" href="'.$item_route.'">Hypercomments</a>';
+				$html = '<a class="'.substr($selector, 1).'" data-xid="com_zoo_'.$this->_item->id.'" href="'.$item_route.'">Hypercomments</a>';
 				return $html.HypercommentsHelper::getCounterWidgetHtml($selector, $label);
 			}
 
