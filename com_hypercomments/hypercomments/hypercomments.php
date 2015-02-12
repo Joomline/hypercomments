@@ -7,6 +7,7 @@
  * @copyright	© 2015. All rights reserved.
  * @license 	GNU/GPL v.3 or later.
  */
+defined('_JEXEC') or die('Restricted access');
 require_once JPATH_ROOT . '/components/com_hypercomments/helpers/hypercomments.php';
 
 class ElementHypercomments extends Element implements iSubmittable {
