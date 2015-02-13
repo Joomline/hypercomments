@@ -35,7 +35,7 @@ class HypercommentsHelper
 
 		$time        = time();
 		$secret      = $params->get('secret_key'); // Секретный ключ, который Вы ввели в административной панели сайта.
-		$user_base64 = base64_encode( json_encode($user) );
+		$user_base64 = base64_encode( json_encode($userData) );
 		$sign        = md5($secret . $user_base64 . $time);
 		$auth        = $user_base64 . "_" . $time . "_" . $sign;
 
