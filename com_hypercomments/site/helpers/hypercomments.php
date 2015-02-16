@@ -84,6 +84,7 @@ class HypercommentsHelper
 			<div id="hypercomments_widget"></div>
 HTML;
 		$commentsHtml = '';
+		$removeContayner = '';
 		if($params->get('sync', 1)){
 			$comments = self::getArticleComments($xid, $local_limit);
 			if(is_array($comments) && count($comments)){
@@ -97,6 +98,7 @@ HTML;
 						';
 					}
 				$commentsHtml .= '</div>';
+				$removeContayner = 'document.getElementById("comments_contayner").remove();';
 			}
 
 		}
@@ -116,7 +118,7 @@ HTML;
 					hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/$widget_id/"+lang+"/widget.js";
 					var s = document.getElementsByTagName("script")[0];
 					s.parentNode.insertBefore(hcc, s.nextSibling);
-					document.getElementById("comments_contayner").remove();
+					$removeContayner
 				})();
 			</script>
 			<a href="http://hypercomments.com" class="hc-link" title="comments widget">comments powered by HyperComments</a>
