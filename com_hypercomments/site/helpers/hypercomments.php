@@ -69,6 +69,7 @@ class HypercommentsHelper
 
 		if(!empty($title))
 		{
+			$title = JString::str_ireplace('"', '\"', $title);
 			$options .= ', title: "'.$title.'"';
 		}
 
