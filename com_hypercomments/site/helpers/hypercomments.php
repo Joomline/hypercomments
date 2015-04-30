@@ -98,7 +98,10 @@ HTML;
 						';
 					}
 				$commentsHtml .= '</div>';
-				$removeContayner = 'document.getElementById("comments_contayner").remove();';
+				$removeContayner = '
+                    var commentsContayner = document.getElementById("comments_contayner");
+                    commentsContayner.parentNode.removeChild(commentsContayner);
+                ';
 			}
 
 		}
