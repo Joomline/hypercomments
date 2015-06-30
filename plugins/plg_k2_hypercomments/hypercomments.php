@@ -15,8 +15,7 @@ defined('_JEXEC') or die;
 JLoader::register('K2Plugin', JPATH_ADMINISTRATOR . '/components/com_k2/lib/k2plugin.php');
 require_once JPATH_ROOT . '/components/com_hypercomments/helpers/hypercomments.php';
 
-
-class plgK2Hypercomments extends K2Plugin
+class plgK2Hypercomments extends JPlugin
 {
 
     // Some params
@@ -26,11 +25,16 @@ class plgK2Hypercomments extends K2Plugin
 
     function onK2AfterDisplay(&$item, &$params, $limitstart)
     {
+        if(JFactory::getApplication()->isAdmin())
+        {
+            return '';
+        }
 
         $excludeCats = $this->params->get('exclude_categories');
+        $input = JFactory::getApplication()->input;
 
         if (defined('HYPERCOMMENTS_COUNTER_LOADED')
-            || JFactory::getApplication()->input->getString('view', '') == 'itemlist'
+            || $input->getString('view', '') == 'itemlist'
             || (is_array($excludeCats) && count($excludeCats) && in_array($item->catid, $excludeCats)))
         {
             return '';
@@ -54,7 +58,7 @@ class plgK2Hypercomments extends K2Plugin
 
     function onK2CategoryDisplay(&$category, &$params, $limitstart)
     {
-        if(!$this->params->get('allow_in_category'))
+        if(JFactory::getApplication()->isAdmin() || !$this->params->get('allow_in_category'))
         {
             return '';
         }
