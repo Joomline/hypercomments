@@ -12,7 +12,7 @@ defined('_JEXEC') or die;
 $user = JFactory::getUser();
 $canDelete = $user->authorise('core.delete', 'com_hypercomments');
 $widget_id = $this->config->get('widget_id');
-JHtml::_('behavior.framework');
+JHtml::_('jquery.framework');
 JFactory::getDocument()->addStyleSheet(JUri::root().'administrator/components/com_hypercomments/assets/css/hypercomments.css');
 JFactory::getDocument()->addScript(JUri::root().'administrator/components/com_hypercomments/assets/js/hypercomments.js');
 ?>

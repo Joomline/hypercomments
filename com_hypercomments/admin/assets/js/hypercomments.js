@@ -201,7 +201,7 @@ function uploadXMLfiles(fileUrl, widget_id, rootUrl)
 		var fileName = jQuery(this).val();
 		var file = fileUrl + fileName;
 		var xid = fileName.replace('.xml','');
-		window.files[xid] = 1;
+		files[xid] = 1;
 		var packet = {
 			service: 'hypercomments',
 			pageID: xid,
