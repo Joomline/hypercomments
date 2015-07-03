@@ -105,6 +105,7 @@ HTML;
 			}
 
 		}
+		$cur_lang = JString::substr(JFactory::getLanguage()->getTag(), 0, 2); //языковая локаль фронта Joomla
 		$html .= $commentsHtml;
 		$html .= <<<HTML
 			<script type="text/javascript">
@@ -114,7 +115,7 @@ HTML;
 				(function() {
 					if("HC_LOAD_INIT" in window)return;
 					HC_LOAD_INIT = true;
-					var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage ||  "en").substr(0, 2).toLowerCase();
+					var lang = "$cur_lang";
 					var hcc = document.createElement("script");
 					hcc.type = "text/javascript";
 					hcc.async = true;
