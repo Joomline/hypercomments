@@ -21,7 +21,7 @@ class HypercommentsModelFile extends JModelList
 			$db = JFactory::getDbo();
 			$query = $db->getQuery(true);
 			$query->select('j.`id`, j.`parent`, j.`object_id`, j.`path`, j.`object_group`, j.`userid`,
-				j.`name`, j.`username`, j.`email`, j.`comment`, j.`ip`, j.`isgood`, j.`ip`, j.`ispoor`')
+				j.`name`, j.`username`, j.`email`, j.`comment`, j.`ip`, j.`isgood`, j.`ip`, j.`ispoor`, j.`date`')
 				->select('o.`title`, o.`link`')
 				->from('#__jcomments as j')
 				->leftJoin('#__jcomments_objects as o USING ( `object_id` )')
