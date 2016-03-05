@@ -8,7 +8,7 @@
     <license>GNU/GPL v.3 or later.</license>
 	<packager>JoomLine</packager>
 	<packagerurl>http://joomline.ru</packagerurl>
-    <version>1.1</version>
+    <version>1.2</version>
     <description>The installation package for integrating social commentary hypercomments site Joomla. The package includes component integration and plugins.</description>
 <files>
 	    <file type="component" method="upgrade"  id="com_hypercomments" client="site">com_hypercomments.zip</file>

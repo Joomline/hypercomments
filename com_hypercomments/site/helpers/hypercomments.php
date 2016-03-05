@@ -125,7 +125,7 @@ HTML;
 					$removeContayner
 				})();
 			</script>
-			<a href="http://hypercomments.com" class="hc-link" title="comments widget">comments powered by HyperComments</a>
+			
 HTML;
 		return $html;
 	}
