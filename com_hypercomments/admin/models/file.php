@@ -2,7 +2,8 @@
 
 // No direct access
 defined( '_JEXEC' ) or die;
-
+require_once JPATH_ROOT.'/components/com_jcomments/jcomments.php';
+use Joomla\String\StringHelper;
 
 /**
  * Hypercomments
@@ -35,11 +36,18 @@ class HypercommentsModelFile extends JModelList
 			}
 			else
 			{
+				JPluginHelper::importPlugin('jcomments', 'avatar');
+				$app = JFactory::getApplication();
+				$app->triggerEvent('onPrepareAvatars', array(&$result));
+
 				$tz = JFactory::getConfig()->get('offset');
 				$url = rtrim(str_replace(array('http://', 'https://'), '', JUri::root()), '/');
 				$tmp = array();
+
 				foreach ($result as $v)
 				{
+					$v->avatar = $this->clearAvatar($v->avatar);
+
 					$root = 0;
 					if(!empty($v->path)){
 						$path = explode(',', $v->path);
@@ -68,6 +76,7 @@ class HypercommentsModelFile extends JModelList
 						'email' => $v->email,
 						'ip' => $v->ip,
 						'date' => $date,
+						'avatar' => $v->avatar,
 						'comment' => htmlspecialchars(strip_tags($v->comment)),
 						'isgood' => $v->isgood,
 						'ispoor' => $v->ispoor,
@@ -83,4 +92,27 @@ class HypercommentsModelFile extends JModelList
 
 		return $result;
 	}
+
+	private function clearAvatar($avatar)
+	{
+		$return = '';
+		if(empty($avatar))
+		{
+			return $return;
+		}
+
+		if(StringHelper::strpos($avatar, '<img') !== false)
+		{
+			preg_match_all('/<img[^>]+src=([\'"])?((?(1).+?|[^\s>]+))(?(1)\1)/', $avatar, $matches);
+			$return = !empty($matches[2]) && !empty($matches[2][0]) ? $matches[2][0] : '';
+		}
+
+		if(!empty($return) && StringHelper::strpos($return, '/administrator/') !== false)
+		{
+			$return = StringHelper::str_ireplace('/administrator/', '/', $return);
+		}
+
+		return $return;
+	}
 }
+

@@ -25,6 +25,7 @@ defined('_JEXEC') or die;
                 <root_id><?php echo $v['root']; ?></root_id>
                 <text><![CDATA[<?php echo $v['comment']; ?>]]></text>
                 <nick><?php echo $v['username']; ?></nick>
+                <avatar><?php echo $v['avatar']; ?></avatar>
                 <time><?php echo $v['date']; ?></time>
                 <ip><?php echo $v['ip']; ?></ip>
                 <email><?php echo $v['email']; ?></email>
@@ -35,7 +36,6 @@ defined('_JEXEC') or die;
                 <topic>false</topic>
                 <param/>
                 <hc_comment>false</hc_comment>
-                <avatar/>
                 <category/>
             </comment>
         <?php endforeach; ?>

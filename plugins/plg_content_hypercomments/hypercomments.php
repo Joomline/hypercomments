@@ -10,7 +10,7 @@
 
 defined('_JEXEC') or die;
 require_once JPATH_ROOT . '/components/com_hypercomments/helpers/hypercomments.php';
-
+use Joomla\String\StringHelper;
 
 class PlgContentHypercomments extends JPlugin
 {
@@ -70,9 +70,9 @@ class PlgContentHypercomments extends JPlugin
 
 		if($context == 'com_content.article')
 		{
-			if(JString::strpos('{hc_off}', $article->text) !== false)
+			if(StringHelper::strpos('{hc_off}', $article->text) !== false)
 			{
-				$article->text = JString::str_ireplace('{hc_off}', '', $article->text);
+				$article->text = StringHelper::str_ireplace('{hc_off}', '', $article->text);
 			}
 			else
 			{
@@ -122,9 +122,9 @@ class PlgContentHypercomments extends JPlugin
 
 		if($context == 'com_virtuemart.productdetails')
 		{
-			if(JString::strpos('{hc_off}', $article->product_desc) !== false)
+			if(StringHelper::strpos('{hc_off}', $article->product_desc) !== false)
 			{
-				$article->text = JString::str_ireplace('{hc_off}', '', $article->product_desc);
+				$article->text = StringHelper::str_ireplace('{hc_off}', '', $article->product_desc);
 			}
 			else
 			{

@@ -2,7 +2,7 @@
 
 // No direct access
 defined( '_JEXEC' ) or die;
-
+use Joomla\String\StringHelper;
 /**
  * Hypercomments
  *
@@ -69,7 +69,7 @@ class HypercommentsHelper
 
 		if(!empty($title))
 		{
-			$title = JString::str_ireplace('"', '\"', $title);
+			$title = StringHelper::str_ireplace('"', '\"', $title);
 			$options .= ', title: "'.$title.'"';
 		}
 
@@ -105,7 +105,7 @@ HTML;
 			}
 
 		}
-		$cur_lang = JString::substr(JFactory::getLanguage()->getTag(), 0, 2); //языковая локаль фронта Joomla
+		$cur_lang = StringHelper::substr(JFactory::getLanguage()->getTag(), 0, 2); //языковая локаль фронта Joomla
 		$html .= $commentsHtml;
 		$html .= <<<HTML
 			<script type="text/javascript">
