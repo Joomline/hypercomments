@@ -11,7 +11,7 @@
 // no direct access
 defined('_JEXEC') or die;
 
-
+use Joomla\String\StringHelper;
 JLoader::register('K2Plugin', JPATH_ADMINISTRATOR . '/components/com_k2/lib/k2plugin.php');
 require_once JPATH_ROOT . '/components/com_hypercomments/helpers/hypercomments.php';
 
@@ -40,13 +40,13 @@ class plgK2Hypercomments extends JPlugin
             return '';
         }
 
-        if (JString::strpos('{hc_off}', $item->fulltext) !== false)
+        if (StringHelper::strpos('{hc_off}', $item->fulltext) !== false)
         {
-            $item->fulltext = JString::str_ireplace('{hc_off}', '', $item->fulltext);
+            $item->fulltext = StringHelper::str_ireplace('{hc_off}', '', $item->fulltext);
             return '';
         }
-        else if (JString::strpos('{hc_off}', $item->introtext) !== false){
-            $item->introtext = JString::str_ireplace('{hc_off}', '', $item->introtext);
+        else if (StringHelper::strpos('{hc_off}', $item->introtext) !== false){
+            $item->introtext = StringHelper::str_ireplace('{hc_off}', '', $item->introtext);
             return '';
         }
         else

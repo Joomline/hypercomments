@@ -3,7 +3,7 @@
 // No direct access
 defined( '_JEXEC' ) or die;
 require_once JPATH_ROOT.'/components/com_jcomments/jcomments.php';
-use Joomla\String\String;
+use Joomla\String\StringHelper;
 
 /**
  * Hypercomments
@@ -101,15 +101,15 @@ class HypercommentsModelFile extends JModelList
 			return $return;
 		}
 
-		if(String::strpos($avatar, '<img') !== false)
+		if(StringHelper::strpos($avatar, '<img') !== false)
 		{
 			preg_match_all('/<img[^>]+src=([\'"])?((?(1).+?|[^\s>]+))(?(1)\1)/', $avatar, $matches);
 			$return = !empty($matches[2]) && !empty($matches[2][0]) ? $matches[2][0] : '';
 		}
 
-		if(!empty($return) && String::strpos($return, '/administrator/') !== false)
+		if(!empty($return) && StringHelper::strpos($return, '/administrator/') !== false)
 		{
-			$return = String::str_ireplace('/administrator/', '/', $return);
+			$return = StringHelper::str_ireplace('/administrator/', '/', $return);
 		}
 
 		return $return;
